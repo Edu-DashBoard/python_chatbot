@@ -1,0 +1,179 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#contain {
+  width: 1920px;
+  height: 1024px;
+  background-color: #FFFFFF;
+  display: block;
+  position: relative;
+}
+#contain .background {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#contain .background .banner {
+  width: 80%;
+  height: 19%;
+  display: block;
+  padding: auto;
+  float: left;
+}
+#contain .background .banner img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid skyblue;
+  border-radius: 10px;
+}
+#contain .background .Section {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  background-color: #CCE2C2;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: relative;
+}
+#contain .background .Section .miniSec {
+  width: 90%;
+  height: 75%;
+  background-color: #FFFFF1;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 20px;
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex: 1;
+  flex-direction: column;
+}
+#contain .background .Section .miniSec .users {
+  width: 100%;
+  height: 10%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+#contain .background .Section .miniSec .users .user_img {
+  width: 3%;
+  height: 100%;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  border: none;
+}
+#contain .background .Section .miniSec .users .user_img img {
+  width: 100%;
+}
+#contain .background .Section .miniSec .users .user_question {
+  width: 65%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #FFFFFF;
+  position: relative;
+  right: -100px;
+}
+#contain .background .Section .miniSec .users .user_question p {
+  transform: translate(0%, 70%);
+}
+#contain .background .Section .miniSec .gom_sec {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  display: flex;
+  margin-top: 10px;
+}
+#contain .background .Section .miniSec .gom_sec .gom {
+  width: 10%;
+  height: 100%;
+  align-items: center;
+}
+#contain .background .Section .miniSec .gom_sec .gom img {
+  margin-top: 40px;
+  width: 70%;
+  height: 25%;
+  transform: translate(50%, 0%);
+}
+#contain .background .Section .miniSec .gom_sec .answer {
+  width: 60%;
+  height: 100%;
+  background-color: #FFFFFF;
+  display: block;
+  border: 2px solid black;
+  border-radius: 30px;
+  position: relative;
+  top: 60%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+}
+#contain .background .Section .miniSec .gom_sec .answer p {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  width: 100%;
+}
+#contain .background .Section .search {
+  width: 89%;
+  height: 13%;
+  display: flex;
+  margin-top: 20px;
+  flex: 1;
+  position: absolute;
+  top: 89%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+}
+#contain .background .Section .search .inputsearch {
+  width: 100%;
+  position: relative;
+}
+#contain .background .Section .search .inputsearch input {
+  width: 100%;
+  height: 50%;
+  border-radius: 30px;
+  border: 2px solid black;
+  font-size: 24px;
+  padding: 20px;
+  position: relative;
+  padding-right: 0px;
+}
+#contain .background .Section .search .inputsearch button {
+  width: 7%;
+  height: 50%;
+  border-radius: 30px;
+  border: hidden;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 15%;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+/*# sourceMappingURL=index.css.map */
