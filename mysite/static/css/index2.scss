@@ -97,7 +97,7 @@ a {
             }
         .gom_sec{
             width: 100%;
-            height: 65%;
+            height: 50%;
             position: relative;
             display: flex;
             margin-top: 10px;
@@ -116,62 +116,48 @@ a {
                     }
                 }
             .answer{
-                width: 40%;
+                width: 60%;
                 height: 100%;
                 background-color: #FFFFFF;
                 display: block;
                 border: 2px solid black;
                 border-radius: 30px;
+                position: relative;
+                top: 60%;
+                left: 33%;
+                transform: translate(-50%, -50%);
                 margin-top: 20px;
-                margin-left: 20px;
                 
                 p{
-                    
+                    text-align: left;
+                    position: absolute;
+                    top: 50%;
+                    left: 57%;
+                    transform: translate(-50%, -50%);
                     font-size: 25px;
                     width: 100%;
-                    margin-left: 20px;
-                    margin-top: 20px ;
 
                 }
                 
                 
                 }
-            .answer2{
-                width: 40%;
-                height: 100%;
-                background-color: #FFFFFF;
-                display: block;
-                border: 2px solid black;
-                border-radius: 30px;
-                margin-top: 20px;
-                margin-left: 20px;
-                
-                p{
-                    font-size: 25px;
-                    width: 100%;
-                    margin-left: 20px;
-                    margin-top: 20px ;
-                }
-
-
-            }
             }
         }
 
         .search{
-            width: 100%;
+            width: 89%;
             height: 13%;
             display: flex;
             margin-top: 20px;
             flex: 1;
             position: absolute;
-            top: 86%;
-            left: 54%;
+            top: 89%;
+            left: 49%;
             transform: translate(-50%, -50%);
-            
+           
 
             .inputsearch {
-                width: 89%;
+                width: 100%;
                 position: relative;
               
                 input{
@@ -208,67 +194,7 @@ a {
                 
                 
               }
-            .popup{
-                width: 95%;
-                height: 112%;
-                position: absolute;
-                display: flex;
-                border: 1px solid black;
-                background-color: #CCE2C2;
-                z-index: 3;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                right: -1%;
-                border-radius: 20px;
-                left: 0px;
-                .popup_q{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    
-                }
-                .wrap{
-                    width: 80%;
-                    height: 50%;
-                    display: flex;
-                    border: 1px solid black;
-                    background-color: #FFFFF1;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 20px;
-                        form{
-                                width: 100%;
-
-                                .item1{
-                                    width: 45%;
-                                    border: none;
-                                    text-align: center;
-                                    background-color: #FFFFF1;
-                                    border-right: 1px solid;
-                                    
-                                }
-                                .item2{
-                                    width: 45%;
-                                    text-align: center;
-                                    background-color: #FFFFF1;
-                                    border: none;
-                                }
-
-                            }
-                        
-                    
-                    
-                }
-
-            }
-            .hidden {
-                display: none;
-            }
         }
     }
     }
-
-    
 }
