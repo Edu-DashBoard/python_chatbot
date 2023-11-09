@@ -71,15 +71,15 @@ a {
   margin-top: 10px;
 }
 #contain .background .Section .miniSec .users .user_img {
-  width: 3%;
+  width: 5%;
   height: 100%;
   position: absolute;
   right: 30px;
-  top: 10px;
+  top: 5px;
   border: none;
 }
-#contain .background .Section .miniSec .users .user_img img {
-  width: 100%;
+#contain .background .Section .miniSec .users .user_img i {
+  font-size: 40px;
 }
 #contain .background .Section .miniSec .users .user_question {
   width: 65%;
@@ -108,9 +108,9 @@ a {
 }
 #contain .background .Section .miniSec .gom_sec .gom img {
   margin-top: 40px;
-  width: 70%;
+  width: 100%;
   height: 25%;
-  transform: translate(50%, 0%);
+  transform: translate(10%, 0%);
 }
 #contain .background .Section .miniSec .gom_sec .answer {
   width: 40%;
@@ -152,7 +152,7 @@ a {
   flex: 1;
   position: absolute;
   top: 86%;
-  left: 54%;
+  left: 55%;
   transform: translate(-50%, -50%);
 }
 #contain .background .Section .search .inputsearch {
@@ -160,7 +160,7 @@ a {
   position: relative;
 }
 #contain .background .Section .search .inputsearch input {
-  width: 100%;
+  width: 99%;
   height: 50%;
   border-radius: 30px;
   border: 2px solid black;
@@ -186,19 +186,31 @@ a {
   color: black;
 }
 #contain .background .Section .search .popup {
-  width: 95%;
+  width: 90%;
   height: 112%;
   position: absolute;
   display: flex;
   border: 1px solid black;
-  background-color: #CCE2C2;
+  background-color: #FFFFFF;
   z-index: 3;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  right: -1%;
   border-radius: 20px;
-  left: 0px;
+}
+#contain .background .Section .search .popup .star1 {
+  width: 10%;
+  position: absolute;
+  left: 0;
+  margin-left: 20px;
+  margin-top: 9px;
+}
+#contain .background .Section .search .popup .star2 {
+  width: 10%;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 9px;
 }
 #contain .background .Section .search .popup .popup_q {
   width: 100%;
@@ -207,29 +219,31 @@ a {
   justify-content: center;
 }
 #contain .background .Section .search .popup .wrap {
-  width: 80%;
+  width: 73%;
   height: 50%;
   display: flex;
   border: 1px solid black;
-  background-color: #FFFFF1;
+  background-color: #e7e7e8;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+  margin-top: 5px;
 }
 #contain .background .Section .search .popup .wrap form {
   width: 100%;
+  text-align: center;
 }
 #contain .background .Section .search .popup .wrap form .item1 {
-  width: 45%;
+  width: 40%;
   border: none;
   text-align: center;
-  background-color: #FFFFF1;
+  background-color: #e7e7e8;
   border-right: 1px solid;
 }
 #contain .background .Section .search .popup .wrap form .item2 {
-  width: 45%;
+  width: 40%;
   text-align: center;
-  background-color: #FFFFF1;
+  background-color: #e7e7e8;
   border: none;
 }
 #contain .background .Section .search .hidden {

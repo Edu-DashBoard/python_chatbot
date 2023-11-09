@@ -70,14 +70,14 @@ a {
                 justify-content: center;
                 margin-top: 10px;
                 .user_img{
-                    width: 3%;
+                    width: 5%;
                     height: 100%;
                     position: absolute;
                     right: 30px;
-                    top: 10px;
+                    top: 5px;
                     border: none;
-                        img{
-                            width: 100%;
+                        i{
+                            font-size: 40px;
                         }
                     }
                 .user_question{
@@ -108,10 +108,9 @@ a {
                 
                     img{
                         margin-top: 40px;
-                        width: 70%;
+                        width: 100%;
                         height: 25%;
-                        
-                        transform: translate(50%, 0%);
+                        transform: translate(10%, 0%);
                         
                     }
                 }
@@ -166,7 +165,7 @@ a {
             flex: 1;
             position: absolute;
             top: 86%;
-            left: 54%;
+            left: 55%;
             transform: translate(-50%, -50%);
             
 
@@ -175,14 +174,14 @@ a {
                 position: relative;
               
                 input{
-                  width: 100%;
-                  height: 50%;
-                  border-radius: 30px;
-                  border: 2px solid black;
-                  font-size: 24px;
-                  padding: 20px;
-                  position: relative;
-                  padding-right: 0px;
+                    width: 99%;
+                    height: 50%;
+                    border-radius: 30px;
+                    border: 2px solid black;
+                    font-size: 24px;
+                    padding: 20px;
+                    position: relative;
+                    padding-right: 0px;
                   
                 }
                 button{
@@ -209,19 +208,33 @@ a {
                 
               }
             .popup{
-                width: 95%;
+                width: 90%;
                 height: 112%;
                 position: absolute;
                 display: flex;
                 border: 1px solid black;
-                background-color: #CCE2C2;
+                background-color: #FFFFFF;
                 z-index: 3;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                right: -1%;
+                .star1{
+                    width: 10%;
+                    position: absolute;
+                    left: 0;
+                    margin-left: 20px;
+                    margin-top: 9px;
+                }
+                .star2{
+                    width: 10%;
+                    position: absolute;
+                    right: 0;
+                    margin-right: 20px;
+                    margin-top: 9px;
+                }
+                
                 border-radius: 20px;
-                left: 0px;
+                
                 .popup_q{
                     width: 100%;
                     display: flex;
@@ -230,29 +243,30 @@ a {
                     
                 }
                 .wrap{
-                    width: 80%;
+                    width: 73%;
                     height: 50%;
                     display: flex;
                     border: 1px solid black;
-                    background-color: #FFFFF1;
+                    background-color: #e7e7e8;;
                     align-items: center;
                     justify-content: center;
                     border-radius: 20px;
+                    margin-top: 5px;
                         form{
                                 width: 100%;
-
+                                text-align: center;
                                 .item1{
-                                    width: 45%;
+                                    width: 40%;
                                     border: none;
                                     text-align: center;
-                                    background-color: #FFFFF1;
+                                    background-color: #e7e7e8;
                                     border-right: 1px solid;
                                     
                                 }
                                 .item2{
-                                    width: 45%;
+                                    width: 40%;
                                     text-align: center;
-                                    background-color: #FFFFF1;
+                                    background-color: #e7e7e8;
                                     border: none;
                                 }
 

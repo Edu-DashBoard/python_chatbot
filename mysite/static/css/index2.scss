@@ -70,14 +70,14 @@ a {
                 justify-content: center;
                 margin-top: 10px;
                 .user_img{
-                    width: 3%;
+                    width: 5%;
                     height: 100%;
                     position: absolute;
                     right: 30px;
-                    top: 10px;
+                    top: 5px;
                     border: none;
-                        img{
-                            width: 100%;
+                        i{
+                            font-size: 40px;
                         }
                     }
                 .user_question{
@@ -108,10 +108,13 @@ a {
                 
                     img{
                         margin-top: 40px;
-                        width: 70%;
+                        
                         height: 25%;
                         
                         transform: translate(50%, 0%);
+                        width: 10%;
+                        left: -45px;
+                        position: absolute;
                         
                     }
                 }
