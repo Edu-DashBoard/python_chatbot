@@ -1,7 +1,7 @@
 import requests
 
-from main import tokens
-
+X_Naver_Client_Id = "Bu2cYUJjttC7V8NIu0kt"
+X_Naver_Client_Secret = "5A5xiPwrs4"
 
 def translate_ko2en(question):
     """
@@ -18,8 +18,8 @@ def translate_ko2en(question):
 
     url = "https://openapi.naver.com/v1/papago/n2mt"
 
-    header = {"X-Naver-Client-Id" : tokens['X_Naver_Client_Id'],
-              "X-Naver-Client-Secret" : tokens['X_Naver_Client_Secret']}
+    header = {"X-Naver-Client-Id" : "Bu2cYUJjttC7V8NIu0kt",
+              "X-Naver-Client-Secret" : "5A5xiPwrs4" }
 
     response = requests.post(url, headers=header, data= data)
     rescode = response.status_code
@@ -46,9 +46,8 @@ def translate_en2ko(answer):
 
     url = "https://openapi.naver.com/v1/papago/n2mt"
 
-    header = {"X-Naver-Client-Id" : tokens['X_Naver_Client_Id'],
-              "X-Naver-Client-Secret" : tokens['X_Naver_Client_Secret']}
-
+    header = {"X-Naver-Client-Id" : "Bu2cYUJjttC7V8NIu0kt",
+                    "X-Naver-Client-Secret" : "5A5xiPwrs4" }
     response = requests.post(url, headers=header, data= data)
     rescode = response.status_code
 
