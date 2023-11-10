@@ -18,7 +18,7 @@ class QnA(models.Model):
         new_qna.save()
 
 class Question_Answer(models.Model):
-    ID = models.CharField(max_length=200, primary_key= True) 
+    ID = models.AutoField(primary_key= True, auto_created=True) 
     user_key = models.CharField(max_length=200, null=True)
     Question = models.CharField(max_length=1000,default='질문') # 질문(필수)
     Answer = models.CharField(max_length=200,default='답변') # 답변(필수)

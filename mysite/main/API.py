@@ -8,10 +8,10 @@ import pprint
 import google.generativeai as palm
 
 # 네이버 papago_api 번역
-import papago_translate as pt
+from  main import papago_translate 
 
 # api_keys
-from tokens import APIS
+from main import tokens
 
 # def questions_ko(question):
 #     bard_api(question)
@@ -39,7 +39,7 @@ def bard_api(question : str):
         1) response['content'] :
             bard의 답변 중에 1번쨰 답변
     """
-    os.environ['_BARD_API_KEY'] = APIS['bard_api']
+    os.environ['_BARD_API_KEY'] = tokens['bard_api']
     bard = Bard()
     response = bard.get_answer(question)
     
@@ -61,7 +61,7 @@ def palm_api_ko(question : str):
         1) response.last :
             palm의 영어 답변을 한국어로 번역한 답변
     """
-    palm.configure(api_key = APIS['palm_api'])
+    palm.configure(api_key = tokens['palm_api'])
     
     # 한국어 질문을 영어로 번역
     response = palm.chat(messages = pt.translate_ko2en(question))
@@ -70,4 +70,4 @@ def palm_api_ko(question : str):
      # 영어 답변을 한국어로 번역
     # print(pt.translate_en2ko(response.last))
     
-    return pt.translate_en2ko(response.last)    # palm 결과값 
+    return papago_translate.translate_en2ko(response.last)    # palm 결과값 

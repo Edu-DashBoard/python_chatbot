@@ -66,10 +66,10 @@
                             <form method="post" action="{% url 'save_user_output' %}">
                                 {% csrf_token %}
                                 
-                                <button class="item1" type="submit" method="post" href="{% url 'save_user_output' %}">첫번째 답안</button>
+                                <button class="item1" type="submit" method="post" href="{% url 'save_user_output' %}" name='answer' value='left'>첫번째 답안</button>
                             
                                
-                                <button class="item2" type="submit" method="post" href="{% url 'save_user_output' %}">두번째 답안</button>
+                                <button class="item2" type="submit" method="post" href="{% url 'save_user_output' %}" name='answer' value='right'>두번째 답안</button>
                             </form>
                         </div>
                         <img class="star2" src="../../static/images/star.gif" alt="star">
