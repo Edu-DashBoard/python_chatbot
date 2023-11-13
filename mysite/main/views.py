@@ -46,7 +46,10 @@ def save_user_input(request):
             user_output2='바드답안'
             palm_answer = palm_api_en(user_input)
             
-            print('출력값:',palm_answer)
+            # print('출력값:',palm_answer)
+            if palm_answer==None:
+                print("답 없음!")
+                palm_answer='답할 수 있는 범위를 벗어났어요.'
 
             return render(request, 'main/index.html', {'user_input': user_input,'user_output':palm_answer,'user_output2':user_output2})  # 사용자 입력을 context에 추가
     return render(request, 'main/index.html', { 'user_input': user_input, 'user_output':palm_answer,'user_output2':user_output2})  # POST 요청이 아닌 경우 또는 user_input이 없는 경우에 대한 응답
@@ -64,7 +67,7 @@ def save_user_output(request):
         else:
             answer=user_output2
         if user_input:
-            print(user_input,"답변",answer)
+            print("DB에 입력되었습니다. Q:",user_input,"\nA:",answer)
             # user_input을 데이터베이스에 저장하거나 다른 작업을 수행
             QA = Question_Answer(Question=user_input,Answer=answer)
             QA.save()
