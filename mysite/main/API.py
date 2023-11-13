@@ -47,12 +47,12 @@ def palm_api_en(question : str):
             palm의 영어 답변
     """
     palm.configure(api_key = palm_api)
+    print('palm key == ok')
     response = palm.chat(messages = question)
     
-    print("'palm'의 답변\n")
-    print(response.last)
+    print("'palm'의 답변\n", response.last)
     
-    # return response.last
+    return response.last
 
 
 def palm_api_ko(question : str):
@@ -67,16 +67,17 @@ def palm_api_ko(question : str):
             palm의 영어 답변을 한국어로 번역한 답변
     """
     palm.configure(api_key = palm_api)
+    print('palm key == ok \n question:',question)
     
     # 한국어 질문을 영어로 번역
-    aaa=pt.translate_ko2en(question)
-    if aaa == 0:
+    en_question=pt.translate_ko2en(question)
+    if en_question == 0:
         return 'text 응답없음'
-    print('aaa',aaa)
-    response = palm.chat(messages = aaa)
+    print('english question:',en_question)
+    response = palm.chat(messages = en_question)
     
     print("'palm'의 답변\n", response)
     # 영어 답변을 한국어로 번역
-    print(pt.translate_en2ko(response.last))
+    ko_answer=pt.translate_en2ko(response.last)
     
-    return pt.translate_en2ko(response.last)
+    return ko_answer
