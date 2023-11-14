@@ -3,7 +3,6 @@ from bardapi import Bard
 import os
 import bardapi
 import openai
-from openai import OpenAI
 
 # palm
 import pprint
