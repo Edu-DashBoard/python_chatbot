@@ -28,8 +28,7 @@ def questions_ko(user_input):
 
 def loading_page(request):
    
-    print("page test")
-        # return render(request, 'main/loading.html')
+    print("loading page")
     return render(request, 'main/loading.html')
 
 def loading_answer(request): # loading
@@ -44,10 +43,10 @@ def loading_answer(request): # loading
         print("user input::",user_input)
 
         if user_input:
-            return render(request,'main/loding.html')
+            return render(request,'main/loading.html')
         else:
             error='입력 없음.'
-    return render(request,'main/loding.html',{'error': error }) #main/project.html')
+    return render(request,'main/loading.html',{'error': error }) #main/project.html')
 
 
 def save_user_input(request):
@@ -57,12 +56,12 @@ def save_user_input(request):
     
     print('유저 입력값:',user_input)
     # user_output = bard_api(user_input)
-    # user_output2=openAI_api(user_input)
-    user_output2='chat'
+    user_output2=openAI_api(user_input)
+    # user_output2='chat'
     palm_answer=palm_api_en(user_input)
 
     print('chat_api:',user_output2)
-    if user_output2==None:
+    if user_output2=='':
         print("chat gpt 답 없음!")
         user_output2='답할 수 있는 범위를 벗어났어요.'
     if palm_answer==None:

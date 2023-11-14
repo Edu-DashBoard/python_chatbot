@@ -1,8 +1,0 @@
-로딩.
-{{error}}
-{% if error %}
-<!--일단 화면 보여주고 api 넘어가는 동안에 기본적으로 화면이 유지되는 기능을 이용한 것이라, 시간을 늘려서는 안됨-->
-<meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/main" />
-{% else %}
-<meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/main/save_user_input" />
-{% endif %}
