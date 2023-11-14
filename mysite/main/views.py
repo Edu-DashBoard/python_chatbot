@@ -4,7 +4,7 @@ from .models import Company
 from .models import QnA, Question_Answer
 from django.http import HttpResponse
 from django.template import loader
-from main.API import palm_api_ko ,palm_api_en
+from main.API import palm_api_ko ,palm_api_en, openAI_api
 # 네이버 papago_api 번역
 from main.papago_translate import *
 
@@ -31,11 +31,9 @@ def loading_answer(request): # loading
     global user_input   # user_input 초기화
 
     
-
     print('로딩 페이지\n')
     if request.method == 'POST':
     
-        
         user_input = request.POST.get('user_input')  # POST 요청에서 user_input 데이터 가져오기
         print("user input::",user_input)
 
@@ -54,11 +52,11 @@ def save_user_input(request):
     print('유저 입력값:',user_input)
     # user_output = bard_api(user_input)
     
-    user_output2='바드답안'
+    user_output2=openAI_api(user_input)
     # palm_answer = palm_api_en(user_input)
     palm_answer=palm_api_en(user_input)
 
-    # print('출력값:',palm_answer)
+    print('chat_api:',user_output2)
     if palm_answer==None:
         print("답 없음!")
         palm_answer='답할 수 있는 범위를 벗어났어요.'
