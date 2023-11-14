@@ -8,7 +8,6 @@ from main.API import palm_api_ko ,palm_api_en
 # 네이버 papago_api 번역
 from main.papago_translate import *
 
-
 user_input= ""
 palm_answer=""
 user_output2=""
@@ -27,33 +26,46 @@ def questions_ko(user_input):
     return palm_answer  #, bard_answer
 
 
-
-def save_user_input(request):
+def loading_answer(request): # loading
     
     global user_input   # user_input 초기화
+
+    
+
+    print('로딩 페이지\n')
+    if request.method == 'POST':
+    
+        
+        user_input = request.POST.get('user_input')  # POST 요청에서 user_input 데이터 가져오기
+        print("user input::",user_input)
+
+        if user_input:
+            return render(request,'main/loding.html')
+        else:
+            error='입력 없음.'
+    return render(request,'main/loding.html',{'error': error }) #main/project.html')
+
+
+def save_user_input(request):
+
     global palm_answer
     global user_output2
 
-    print("두번째페이지")
+    print('유저 입력값:',user_input)
+    # user_output = bard_api(user_input)
     
-    print("API완료")
-    if request.method == 'POST':
-        user_input = request.POST.get('user_input')  # POST 요청에서 user_input 데이터 가져오기
-        if user_input:
+    user_output2='바드답안'
+    # palm_answer = palm_api_en(user_input)
+    palm_answer=palm_api_en(user_input)
 
-            print('유저 입력값:',user_input)
-            # user_output = bard_api(user_input)
-            user_output2='바드답안'
-            palm_answer = palm_api_en(user_input)
-            
-            # print('출력값:',palm_answer)
-            if palm_answer==None:
-                print("답 없음!")
-                palm_answer='답할 수 있는 범위를 벗어났어요.'
+    # print('출력값:',palm_answer)
+    if palm_answer==None:
+        print("답 없음!")
+        palm_answer='답할 수 있는 범위를 벗어났어요.'
 
-            return render(request, 'main/index.html', {'user_input': user_input,'user_output':palm_answer,'user_output2':user_output2})  # 사용자 입력을 context에 추가
-    return render(request, 'main/index.html', { 'user_input': user_input, 'user_output':palm_answer,'user_output2':user_output2})  # POST 요청이 아닌 경우 또는 user_input이 없는 경우에 대한 응답
- 
+    return render(request, 'main/index.html', {'user_input': user_input,'user_output':palm_answer,'user_output2':user_output2})  # 사용자 입력을 context에 추가
+
+
 def save_user_output(request):
 
     global user_input

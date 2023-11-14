@@ -42,11 +42,11 @@
                 </div>
                 <div class="search">
                     <div class="inputsearch">
-                        <form method="post" action="{% url 'save_user_input' %}">
+                        <form method="post" action="{% url 'loading_answer' %}">
                         {% csrf_token %}
                         <input placeholder="궁금한 사항이 있으면 물어보세요" type="text" name="user_input" onkeydown="handleEnterKey(event)"> 
                         
-                        <button type="submit" method="post" href="{% url 'save_user_input' %}"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button type="submit" method="post" href="{% url 'loading_answer' %}"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                        
                     </div>
