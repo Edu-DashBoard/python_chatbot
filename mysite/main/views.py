@@ -51,7 +51,6 @@ def save_user_input(request):
 
     print('유저 입력값:',user_input)
     # user_output = bard_api(user_input)
-    
     user_output2=openAI_api(user_input)
     # palm_answer = palm_api_en(user_input)
     palm_answer=palm_api_en(user_input)

@@ -97,7 +97,7 @@ def openAI_api(question : str):
     
     # OpenAI API에 요청 보내기
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="gpt-3.5-turbo", #3.5버전 요금이 더 저렴.
         prompt=question,
         max_tokens=300
     )
