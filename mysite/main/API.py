@@ -99,7 +99,7 @@ def openAI_api(question : str):
     response = openai.Completion.create(
         engine="gpt-3.5-turbo", #3.5버전 요금이 더 저렴.
         prompt=question,
-        max_tokens=300
+        max_tokens=150
     )
     
     # API 응답에서 답변 추출

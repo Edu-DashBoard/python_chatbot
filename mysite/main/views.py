@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
 #edit
 from .models import Company
 from .models import QnA, Question_Answer
@@ -25,6 +26,11 @@ def questions_ko(user_input):
 
     return palm_answer  #, bard_answer
 
+def loading_page(request):
+   
+    print("page test")
+        # return render(request, 'main/loading.html')
+    return render(request, 'main/loading.html')
 
 def loading_answer(request): # loading
     
@@ -48,16 +54,19 @@ def save_user_input(request):
 
     global palm_answer
     global user_output2
-
+    
     print('유저 입력값:',user_input)
     # user_output = bard_api(user_input)
-    user_output2=openAI_api(user_input)
-    # palm_answer = palm_api_en(user_input)
+    # user_output2=openAI_api(user_input)
+    user_output2='chat'
     palm_answer=palm_api_en(user_input)
 
     print('chat_api:',user_output2)
+    if user_output2==None:
+        print("chat gpt 답 없음!")
+        user_output2='답할 수 있는 범위를 벗어났어요.'
     if palm_answer==None:
-        print("답 없음!")
+        print("palm 답 없음!")
         palm_answer='답할 수 있는 범위를 벗어났어요.'
 
     return render(request, 'main/index.html', {'user_input': user_input,'user_output':palm_answer,'user_output2':user_output2})  # 사용자 입력을 context에 추가

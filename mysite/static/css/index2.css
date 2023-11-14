@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -92,11 +93,13 @@ a {
   right: -100px;
 }
 #contain .background .Section .miniSec .users .user_question p {
-  transform: translate(0%, 70%);
+  transform: translate(0%, 10%);
+  font-size: 30px;
+  font-family: "Dongle";
 }
 #contain .background .Section .miniSec .gom_sec {
   width: 100%;
-  height: 50%;
+  height: 66%;
   position: relative;
   display: flex;
   margin-top: 10px;
@@ -108,31 +111,32 @@ a {
 }
 #contain .background .Section .miniSec .gom_sec .gom img {
   margin-top: 40px;
-  width: 100%;
   height: 25%;
-  transform: translate(10%, 0%);
+  transform: translate(50%, 0%);
+  width: 10%;
+  left: -45px;
+  position: absolute;
 }
 #contain .background .Section .miniSec .gom_sec .answer {
-  width: 60%;
+  width: 80%;
   height: 100%;
   background-color: #FFFFFF;
   display: block;
   border: 2px solid black;
   border-radius: 30px;
   position: relative;
-  top: 60%;
-  left: 33%;
+  top: 57%;
+  left: 42%;
   transform: translate(-50%, -50%);
-  margin-top: 20px;
 }
 #contain .background .Section .miniSec .gom_sec .answer p {
   text-align: left;
-  position: absolute;
-  top: 50%;
-  left: 57%;
-  transform: translate(-50%, -50%);
   font-size: 25px;
-  width: 100%;
+  width: 95%;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-family: "Dongle";
+  margin-right: 40px;
 }
 #contain .background .Section .search {
   width: 89%;
