@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -92,7 +93,9 @@ a {
   right: -100px;
 }
 #contain .background .Section .miniSec .users .user_question p {
-  transform: translate(0%, 70%);
+  transform: translate(0%, 10%);
+  font-size: 30px;
+  font-family: "Dongle";
 }
 #contain .background .Section .miniSec .gom_sec {
   width: 100%;
@@ -121,12 +124,16 @@ a {
   border-radius: 30px;
   margin-top: 20px;
   margin-left: 20px;
+  overflow: hidden;
+  position: relative;
 }
 #contain .background .Section .miniSec .gom_sec .answer p {
   font-size: 25px;
-  width: 100%;
+  width: 95%;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
+  font-family: "Dongle";
+  margin-right: 40px;
 }
 #contain .background .Section .miniSec .gom_sec .answer2 {
   width: 40%;
@@ -137,12 +144,51 @@ a {
   border-radius: 30px;
   margin-top: 20px;
   margin-left: 20px;
+  overflow: hidden;
+  position: relative;
 }
 #contain .background .Section .miniSec .gom_sec .answer2 p {
   font-size: 25px;
-  width: 100%;
+  width: 95%;
   margin-left: 20px;
   margin-top: 20px;
+  font-family: "Dongle";
+  margin-right: 40px;
+}
+#contain .background .Section .miniSec .button_sec {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#contain .background .Section .miniSec .button_sec .answer_button {
+  margin-left: 100px;
+}
+#contain .background .Section .miniSec .button_sec .answer_button .answer_button_left {
+  background: none;
+  width: 150px;
+  border-radius: 30px;
+  height: 35px;
+  border: 2px solid;
+  font-size: 20px;
+}
+#contain .background .Section .miniSec .button_sec .answer_button .answer_button_left i {
+  margin-left: 10px;
+}
+#contain .background .Section .miniSec .button_sec .answer_button2 {
+  margin-right: 30px;
+}
+#contain .background .Section .miniSec .button_sec .answer_button2 .answer_button_right {
+  background: none;
+  width: 150px;
+  border-radius: 30px;
+  height: 35px;
+  border: 2px solid;
+  font-size: 20px;
+  text-align: center;
+}
+#contain .background .Section .miniSec .button_sec .answer_button2 .answer_button_right i {
+  margin-left: 10px;
 }
 #contain .background .Section .search {
   width: 100%;

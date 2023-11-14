@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -7,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../static/css/style.css">
     <script src="https://kit.fontawesome.com/8c61d70daf.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/loading.js' %}"></script>
     <title>Chunjae Chat bot</title>
 </head>
 <body>
@@ -37,7 +39,22 @@
                             <input placeholder="궁금한 사항이 있으면 물어보세요" type="text" name="user_input" onkeydown="handleEnterKey(event)"> 
                             
                             <button type="submit" method="post" href="{% url 'save_user_input' %}"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <script>
+                                function performLongTask() {
+                                    showLoading(); // 작업 시작 시 로딩 화면 표시
+                                    
+                                    // Ajax 또는 다른 비동기 작업 수행
+                                    $.ajax({
+                                        url: '/save_user_input/',
+                                        success: function(data) {
+                                            hideLoading(); // 작업 완료 시 로딩 화면 숨기기
+                                            console.log(data);
+                                        }
+                                    });
+                                }
+                            </script>
                             </form>
+                            
                            
                         </div>
                     </div>

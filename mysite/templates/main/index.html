@@ -1,14 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/css/index.css">
+    <link rel="stylesheet" href="../../static/css/index.css?after">
     <script src="https://kit.fontawesome.com/8c61d70daf.js" crossorigin="anonymous"></script>
+    
     <title>Document</title>
 </head>
 <body>
+    
     <contain>
         
         <div id="contain">
@@ -31,19 +34,59 @@
                             <img src="../../static/images/gom2.png"></img>
                             
                         </div>
-                        <div class="answer">
+                        <div class="answer" id="answer">
                             <p>
                               {{user_output}}
                             </p>
                         </div>
-                        <div class="answer2" >
+                        <div class="answer2" id="answer2">
                             <p>
                                 {{user_output2}}
                             </p>
                         </div>
-                    
-                        
+                         
                     </div>
+                <div class="button_sec">
+                    <div class="answer_button">
+                        <button class="answer_button_left" onclick="expandAnswer()">답안 확인<i class="fa-regular fa-message"></i></button>
+                    </div>
+                    <div class="answer_button2">
+                        <button class="answer_button_right" onclick="expandAnswer2()">답안 확인<i class="fa-regular fa-message"></i></button>
+                    </div>
+                </div>
+                <script>
+                    function expandAnswer() {
+                        let answerDiv = document.getElementById("answer");
+                        
+                        answerDiv.style.width = "100%";
+                        answerDiv.style.height = "100%";
+                        answerDiv.style.marginRight = "20px";
+                        answerDiv.style.border = "2px solid black";
+                        
+                        let answer2Div = document.getElementById("answer2");
+                        answer2Div.style.width = "0";
+                        answer2Div.style.height = "0";
+                        answer2Div.style.border = "none";
+                    
+                    }
+                    
+
+                    function expandAnswer2() {
+                        let answer2Div = document.getElementById("answer2");
+                        answer2Div.style.width = "100%";
+                        answer2Div.style.height = "100%";
+                        answer2Div.style.marginRight = "20px";
+                        answer2Div.style.border = "2px solid black";
+                        answer2Div.style.right = "20px";
+                        let answerDiv = document.getElementById("answer");
+                        
+                        answerDiv.style.width = "0";
+                        answerDiv.style.height = "0";
+                        answerDiv.style.border = "none";
+                        answerDiv.style.border = "none";
+                    }
+                </script>
+               
                         
                 </div>
                 <div class="search">

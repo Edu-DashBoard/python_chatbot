@@ -1,12 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
 #edit
 from .models import Company
 from .models import QnA, Question_Answer
 from django.http import HttpResponse
 from django.template import loader
-from main.API import palm_api_ko 
+from main.API import palm_api_ko , palm_api_en
 # 네이버 papago_api 번역
 from main.papago_translate import *
+
 
 
 user_input= ""
@@ -26,6 +28,11 @@ def questions_ko(user_input):
 
     return palm_answer  #, bard_answer
 
+def loading_page(request):
+   
+    print("page test")
+        # return render(request, 'main/loading.html')
+    return render(request, 'main/loading.html')
 
 
 def save_user_input(request):
@@ -33,20 +40,24 @@ def save_user_input(request):
     global user_input   # user_input 초기화
     global palm_answer
     global user_output2
+    
 
-    print("두번째페이지")
-    # user_output = bard_api(user_input)
-    # user_output='바드답안'
-    palm_answer = palm_api_ko(user_input)
-    user_output2='우측답안'
-    print("API완료")
+    
+
     if request.method == 'POST':
         user_input = request.POST.get('user_input')  # POST 요청에서 user_input 데이터 가져오기
+        
         if user_input:
-            
+            palm_answer = palm_api_en(user_input)
+            user_output2='우측답안'
+            print("API완료")
+
+
             return render(request, 'main/index.html', {'user_input': user_input,'user_output':palm_answer,'user_output2':user_output2})  # 사용자 입력을 context에 추가
+                
     return render(request, 'main/index.html', { 'user_input': user_input, 'user_output':palm_answer,'user_output2':user_output2})  # POST 요청이 아닌 경우 또는 user_input이 없는 경우에 대한 응답
- 
+
+
 def save_user_output(request):
 
     global user_input

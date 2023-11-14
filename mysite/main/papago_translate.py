@@ -1,7 +1,7 @@
 import requests
 
-X_Naver_Client_Id = "Bu2cYUJjttC7V8NIu0kt"
-X_Naver_Client_Secret = "5A5xiPwrs4"
+X_Naver_Client_Id = "JhaG9m8Eeu6suCbMEgE1"
+X_Naver_Client_Secret = "xWSCfLnX1L"
 
 def translate_ko2en(question):
     """

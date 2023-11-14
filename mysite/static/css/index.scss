@@ -1,4 +1,7 @@
+
 @charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
 
 * {
     margin: 0px;
@@ -90,7 +93,9 @@ a {
                     position: relative;
                     right: -100px;
                         p{  
-                            transform: translate(0%, 70%);
+                            transform: translate(0%, 10%);
+                            font-size: 30px;
+                            font-family: "Dongle";
                         }
                     }
                 
@@ -123,13 +128,17 @@ a {
                 border-radius: 30px;
                 margin-top: 20px;
                 margin-left: 20px;
+                overflow: hidden;
+                position: relative;
                 
                 p{
                     
                     font-size: 25px;
-                    width: 100%;
+                    width: 95%;
                     margin-left: 20px;
-                    margin-top: 20px ;
+                    margin-top: 10px;
+                    font-family: "Dongle";
+                    margin-right: 40px;
 
                 }
                 
@@ -144,18 +153,60 @@ a {
                 border-radius: 30px;
                 margin-top: 20px;
                 margin-left: 20px;
+                overflow: hidden;
+                position: relative;
                 
                 p{
                     font-size: 25px;
-                    width: 100%;
+                    width: 95%;
                     margin-left: 20px;
-                    margin-top: 20px ;
+                    margin-top: 20px;
+                    font-family: "Dongle";
+                    margin-right: 40px;
                 }
 
 
             }
+        
+            }
+        .button_sec{
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .answer_button{
+                margin-left: 100px;
+                .answer_button_left{
+                    background: none;
+                    width: 150px;
+                    border-radius: 30px;
+                    height: 35px;
+                    border: 2px solid;
+                    font-size: 20px;
+                    
+                    i{
+                        margin-left: 10px;
+                    }
+                    }
+                }
+            .answer_button2{
+                margin-right: 30px;
+                .answer_button_right{
+                    background: none;
+                    width: 150px;
+                    border-radius: 30px;
+                    height: 35px;
+                    border: 2px solid;
+                    font-size: 20px;
+                    text-align: center;
+                    i{
+                        margin-left: 10px;
+                    }
+                }
+    
             }
         }
+    }
 
         .search{
             width: 100%;
