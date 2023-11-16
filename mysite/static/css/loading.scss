@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Dongle:wght@300&display=swap');
+
+@charset "UTF-8";
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none
+}
+.back_sec{
+    width: 1920px;
+    height: 1024px;
+    
+    .loading_imgs{
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border: 2px solid skyblue;
+            
+
+        }
+
+    }
+    .loading_dots{
+        width: 1024px;
+        height: 150px;
+        position: absolute;
+        top: 15%;
+        left: 40%;
+        z-index: 3;
+        display: flex;
+        
+        p{
+            font-size: 50px;
+            position: absolute;
+            top: 30px; 
+            left: -20px;
+            font-family: 'Dongle', sans-serif;
+        }
+
+        img{
+            width: 10%;
+            height: 50%;
+            z-index: 3;
+            position: absolute;
+            right: 58%;
+            top: 34px;
+        }
+    }
+}
+

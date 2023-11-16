@@ -99,7 +99,7 @@ a {
 }
 #contain .background .Section .miniSec .gom_sec {
   width: 100%;
-  height: 65%;
+  height: 70%;
   position: relative;
   display: flex;
   margin-top: 10px;
@@ -151,7 +151,7 @@ a {
   font-size: 25px;
   width: 95%;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   font-family: "Dongle";
   margin-right: 40px;
 }

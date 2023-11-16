@@ -48,7 +48,6 @@ def loading_answer(request): # loading
             error='입력 없음.'
     return render(request,'main/loading.html',{'error': error }) #main/project.html')
 
-
 def save_user_input(request):
 
     global palm_answer
@@ -56,42 +55,50 @@ def save_user_input(request):
     
     print('유저 입력값:',user_input)
     # user_output = bard_api(user_input)
-    user_output2=openAI_api(user_input)
+    # user_output2=openAI_api(user_input)
     # user_output2='chat'
     palm_answer=palm_api_en(user_input)
 
-    print('chat_api:',user_output2)
-    if user_output2=='':
-        print("chat gpt 답 없음!")
-        user_output2='답할 수 있는 범위를 벗어났어요.'
+    # print('chat_api:',user_output2)
+    # if user_output2=='':
+    #     print("chat gpt 답 없음!")
+    #     user_output2='답할 수 있는 범위를 벗어났어요.'
     if palm_answer==None:
         print("palm 답 없음!")
         palm_answer='답할 수 있는 범위를 벗어났어요.'
 
-    return render(request, 'main/index.html', {'user_input': user_input,'user_output':palm_answer,'user_output2':user_output2})  # 사용자 입력을 context에 추가
+    return render(request, 'main/index.html', {'user_input': user_input,'user_output':palm_answer,'user_output2':user_output2})  # 사용자 입력과 결과를 context에 추가하여 main/index.html 페이지에 렌더링.
 
 
 def save_user_output(request):
-
     global user_input
     global palm_answer
     global user_output2
     
+    # POST 요청을 처리.
     if request.method == 'POST':
-        which=request.POST.get('answer')
-        if which=='left':
-            answer=palm_answer
+        # 'answer' 파라미터를 가져옵니다.
+        which = request.POST.get('answer')
+        
+        # 'which' 값에 따라 적절한 답변을 선택.
+        if which == 'left':
+            answer = palm_answer
         else:
-            answer=user_output2
+            answer = user_output2
+        
+        # 사용자 입력이 있을 때만 데이터베이스에 저장.
         if user_input:
-            print("DB에 입력되었습니다. Q:",user_input,"\nA:",answer)
+            print("DB에 입력되었습니다. Q:", user_input, "\nA:", answer)
+            
             # user_input을 데이터베이스에 저장하거나 다른 작업을 수행
-            QA = Question_Answer(Question=user_input,Answer=answer)
+            QA = Question_Answer(Question=user_input, Answer=answer)
             QA.save()
             
-            
-            return render(request, 'main/index2.html',{'user_input': user_input, 'user_output':answer})  # 사용자 입력을 context에 추가
-    return render(request, 'main/index2.html', {'user_input': user_input,'user_output':answer})  # POST 요청이 아닌 경우 또는 user_input이 없는 경우에 대한 응답 
+            # 결과를 context에 추가하여 'main/index2.html' 페이지에 렌더링.
+            return render(request, 'main/index2.html', {'user_input': user_input, 'user_output': answer})
+    
+    # POST 요청이 아니거나 user_input이 없는 경우에 대한 응답
+    return render(request, 'main/index2.html', {'user_input': user_input, 'user_output': answer})
 
 
 # 한국어 질문과 답변 (네이버 papago_api를 이용해 한국어 질문을 영어로 번역 후 palm에게 보내고 palm의 영어 답변을 한국어로 다시 번역)

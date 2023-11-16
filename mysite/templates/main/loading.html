@@ -1,9 +1,13 @@
-<link rel="stylesheet" href="../../static/css/loading.css">
-<img src="../../static/images/loading.gif"/>
-로딩중.
-{{error}}
-{% if error %}
-<!--일단 화면 보여주고 api 넘어가는 동안에 기본적으로 화면이 유지되는 기능을 이용한 것이라, 시간을 늘려서는 안됨-->
+<link rel="stylesheet" href="../../static/css/loading.css?after">
+<div class="back_sec">
+    <div class="loading_imgs"><img src="../../static/images/loading.gif"></div>
+    <div class="loading_dots"><p>파린이가 답변을 찾아보고 있어요</p><img src="../../static/images/loading_dots.gif">
+        </div>
+    {{error}}
+    {% if error %}
+    
+</div>
+<!-- 일단 화면 보여주고 api 넘어가는 동안에 기본적으로 화면이 유지되는 기능을 이용한 것이라, 시간을 늘려서는 안됨 -->
 <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/main" />
 {% else %}
 <meta http-equiv="refresh" content="0; url=http://127.0.0.1:8000/main/save_user_input" />
