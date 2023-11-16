@@ -47,9 +47,10 @@ def save_user_input(request):
     
     print('유저 입력값:',user_input)
     # user_output = bard_api(user_input)
-    # user_output2=openAI_api(user_input)
+    #user_output2=openAI_api(user_input+"100글자 이내로 대답해 줘.")
     user_output2='chat'
-    palm_answer=palm_api_en(user_input)
+    palm_answer=palm_api_en(user_input+"Please explain it in less than 100 words")
+    #palm_answer=palm_api_ko(user_input+"100글자 이내로 대답해 줘.")
 
     print('chat_api:',user_output2)
     if user_output2=='':
