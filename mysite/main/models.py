@@ -1,22 +1,7 @@
 from django.db import models
  
 # Create your models here.
- 
-class Company(models.Model):
-    code = models.CharField(max_length=20, primary_key= True)
-    company = models.CharField(max_length=40)
-    last_update = models.DateField()
- 
-    def __str__(self):
-        return self.company
-
-class QnA(models.Model):
-    question = models.CharField(max_length=20, primary_key= True)
-    
-    def save_user_input(user_input):
-        new_qna = QnA(question=user_input)
-        new_qna.save()
-
+# 사용자의 질문과 ai의 답변을 저장하는 데이터스키마
 class Question_Answer(models.Model):
     ID = models.AutoField(primary_key= True, auto_created=True) 
     user_key = models.CharField(max_length=200, null=True)

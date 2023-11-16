@@ -1,41 +1,30 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 #edit
-from .models import Company
-from .models import QnA, Question_Answer
+from .models import Question_Answer
 from django.http import HttpResponse
 from django.template import loader
 from main.API import palm_api_ko ,palm_api_en, openAI_api
 # 네이버 papago_api 번역
 from main.papago_translate import *
 
+# 페이지 이동간에 유지되어야하는 전역변수
 user_input= ""
 palm_answer=""
 user_output2=""
+
+# /main 페이지 렌더링
 def index(request):
     #edit
 
     print("첫페이지")
     return render(request, 'main/project.html')
 
-
-def questions_ko(user_input):
-    # bard_answer =  API.bard_api_qeustion(user_input)
-    print()
-    palm_answer = palm_api_ko(user_input)
-
-    return palm_answer  #, bard_answer
-
-def loading_page(request):
-   
-    print("loading page")
-    return render(request, 'main/loading.html')
-
-def loading_answer(request): # loading
+# /loading_answer 페이지 렌더링
+def loading_answer(request):
     
-    global user_input   # user_input 초기화
+    global user_input 
 
-    
     print('로딩 페이지\n')
     if request.method == 'POST':
     
@@ -46,8 +35,11 @@ def loading_answer(request): # loading
             return render(request,'main/loading.html')
         else:
             error='입력 없음.'
-    return render(request,'main/loading.html',{'error': error }) #main/project.html')
 
+    # 입력이 없을경우 main으로 돌아간다.
+    return render(request,'main/loading.html',{'error': error })
+
+# /save_user_input 페이지 렌더링
 def save_user_input(request):
 
     global palm_answer
@@ -56,20 +48,20 @@ def save_user_input(request):
     print('유저 입력값:',user_input)
     # user_output = bard_api(user_input)
     # user_output2=openAI_api(user_input)
-    # user_output2='chat'
+    user_output2='chat'
     palm_answer=palm_api_en(user_input)
 
-    # print('chat_api:',user_output2)
-    # if user_output2=='':
-    #     print("chat gpt 답 없음!")
-    #     user_output2='답할 수 있는 범위를 벗어났어요.'
+    print('chat_api:',user_output2)
+    if user_output2=='':
+        print("chat gpt 답 없음!")
+        user_output2='답할 수 있는 범위를 벗어났어요.'
     if palm_answer==None:
         print("palm 답 없음!")
         palm_answer='답할 수 있는 범위를 벗어났어요.'
 
     return render(request, 'main/index.html', {'user_input': user_input,'user_output':palm_answer,'user_output2':user_output2})  # 사용자 입력과 결과를 context에 추가하여 main/index.html 페이지에 렌더링.
 
-
+# /save_user_output 페이지 렌더링
 def save_user_output(request):
     global user_input
     global palm_answer

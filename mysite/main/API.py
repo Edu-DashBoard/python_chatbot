@@ -10,8 +10,8 @@ import google.generativeai as palm
 import main.papago_translate as pt
 
 OpenAI_api = ''
-palm_api = 'AIzaSyAcRMOWVEDSxMqZwgc3nTzgDbDSCAG4Ap8'
-bard_api = 'dAh_C6Op_pXCblErPTSBldRe5-9hEHFvzASbpp9xNcflZnUJ5N_o_Vd7k28zCf0cNQSQBg.'
+palm_api = ''
+bard_api = ''
 
 def bard_api_qeustion(question : str):
     """
