@@ -26,3 +26,10 @@ LLM: Koalpaca, PaLM2, chatGPT
 
 - 데이터 출처   
 https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca?row=4
+<br/>
+
+---
+<br/>
+
+이 어플리케이션은 단순 과제용으로 상업적으로 사용하지 않습니다.      
+gom.png과 gom2.png 이미지 저작권은 천재교육에게 있습니다.    
